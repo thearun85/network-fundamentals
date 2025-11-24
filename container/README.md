@@ -29,3 +29,6 @@ we create a PID namespace. This makes it interesting. This isolates the containe
 
 Another thing to observe is that we have to create an additional fork to create a child process which will then enter this container. The reason is that the process which creates the PID namespace cannot enter the container.
 
+## v4
+
+we create a UTS namespace with the flag CLONE_NEWUTS. This isolates the hostname. How does it work? In the container terminal shell, we can set the value of variable hostname and it would change the value of hostname on the host computer. Try it yuorself.
